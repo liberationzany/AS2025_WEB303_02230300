@@ -15,8 +15,8 @@ This implementation illustrates several key modern development practices:
 
 **Image 1: gRPC Client Request**
 Demonstration of a successful gRPC call using grpcurl, returning a personalized greeting message that incorporates the current server timestamp.
-![grpcurl Test Output](/assets/Screenshot%202025-12-04%20124655.png)
+![grpcurl Test Output](assets/Screenshot%202025-12-04%20124655.png)
 
 **Image 2: Containerized Services Running**
 Visual confirmation showing both microservices operating within isolated Docker containers, managed as a cohesive application unit.
-![Docker Containers Running](/assets/Screenshot%202025-12-04%20131821.png)
+![Docker Containers Running](assets/Screenshot%202025-12-04%20131821.png)
