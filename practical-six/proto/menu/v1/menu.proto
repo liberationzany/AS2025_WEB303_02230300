@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package menu.v1;
+
+option go_package = "github.com/practical6/proto/menu/v1;menuv1";
+
+service MenuService {
+  rpc CreateMenuItem(CreateMenuItemRequest) returns (CreateMenuItemResponse);
+  rpc GetMenuItem(GetMenuItemRequest) returns (GetMenuItemResponse);
+  rpc GetMenuItems(GetMenuItemsRequest) returns (GetMenuItemsResponse);
+}
+
+message MenuItem {
+  uint32 id = 1;
+  string name = 2;
+  string description = 3;
+  double price = 4;
+}
+
+message CreateMenuItemRequest {
+  string name = 1;
+  string description = 2;
+  double price = 3;
+}
+
+message CreateMenuItemResponse {
+  MenuItem menu_item = 1;
+}
+
+message GetMenuItemRequest {
+  uint32 id = 1;
+}
+
+message GetMenuItemResponse {
+  MenuItem menu_item = 1;
+}
+
+message GetMenuItemsRequest {}
+
+message GetMenuItemsResponse {
+  repeated MenuItem menu_items = 1;
+}
