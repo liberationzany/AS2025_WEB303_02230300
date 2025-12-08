@@ -1,0 +1,99 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.App-header h1 {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu, .cart {
+  flex: 1;
+  margin: 0 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu h2, .cart h2 {
+  color: #282c34;
+}
+
+.menu ul, .cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li, .cart li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.menu li:last-child, .cart li:last-child {
+  border-bottom: none;
+}
+
+.menu button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menu button:hover {
+  background-color: #45a049;
+}
+
+.order-btn {
+  background-color: #2196F3;
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.order-btn:hover {
+  background-color: #0b7dda;
+}
+
+.message {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .menu, .cart {
+    margin: 10px 0;
+  }
+}
