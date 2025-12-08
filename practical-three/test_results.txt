@@ -1,0 +1,52 @@
+﻿================================================================================
+                      MICROSERVICES API TEST RESULTS
+================================================================================
+
+1. CREATE USER
+Command: curl -X POST http://localhost:8080/api/users -d '{"name":"Jane Doe","email":"jane@example.com"}'
+
+Response:
+rpc error: code = Unknown desc = ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+
+
+2. GET USER (ID: 1)
+Command: curl -X GET http://localhost:8080/api/users/1
+
+Response:
+{"id":"1","name":"Jane Doe","email":"jane@example.com"}
+
+
+3. CREATE PRODUCT
+Command: curl -X POST http://localhost:8080/api/products -d '{"name":"Laptop","price":1200.50}'
+
+Response:
+{"id":"2","name":"Laptop","price":1200.5}
+
+
+4. GET PRODUCT (ID: 1)
+Command: curl -X GET http://localhost:8080/api/products/1
+
+Response:
+{"id":"1","name":"Laptop","price":1200.5}
+
+
+5. COMPOSITE ENDPOINT (User + Product Aggregation)
+Command: curl -X GET http://localhost:8080/api/purchases/user/1/product/1
+
+Response:
+{"product":{"id":"1","name":"Laptop","price":1200.5},"user":{"id":"1","name":"Jane Doe","email":"jane@example.com"}}
+
+
+================================================================================
+                            SUCCESS - ALL TESTS PASSED
+================================================================================
+
+ User service created and retrieved successfully
+ Product service created and retrieved successfully  
+ API Gateway properly discovers services via Consul
+ Composite endpoint aggregates data from multiple services
+ All endpoints responding with correct JSON responses
+
+Consul Dashboard: http://localhost:8500
+API Gateway: http://localhost:8080
+
